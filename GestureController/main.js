@@ -135,7 +135,7 @@ define(['HubLink', 'RIB', 'PropertiesPanel', 'Easy'], function(Hub, RIB, Ppanel,
     if(!this.controller.gestures){
       this.controller.gestures = {
         recording: []
-      }
+      };
     }
 
     if(!this.controller._inputs) this.controller._inputs = [];
@@ -273,7 +273,7 @@ define(['HubLink', 'RIB', 'PropertiesPanel', 'Easy'], function(Hub, RIB, Ppanel,
       console.log("The given input is empty!");
       return false;
     }
-  }
+  };
 
   GestureController.deleteRecording = function(el){
     var index = $(el.currentTarget).attr("data-index");
@@ -322,10 +322,10 @@ define(['HubLink', 'RIB', 'PropertiesPanel', 'Easy'], function(Hub, RIB, Ppanel,
     var trainer = new synaptic.Trainer(this._perceptron);
 
     var trainingOptions = {
-      rate: .1,
+      rate: 0.1,
       iterations: 20000,
-      error: .005,
-    }
+      error: 0.005,
+    };
 
     var that = this;
     trainer.trainAsync(this.trainingSet, trainingOptions).then(function(results){
@@ -370,7 +370,7 @@ define(['HubLink', 'RIB', 'PropertiesPanel', 'Easy'], function(Hub, RIB, Ppanel,
       var index = $(el.currentTarget).attr("data-index");
       this.gestures.recording[Number(index)].name = el.currentTarget.value;
       this.updateInputList();
-    }
+    };
 
     this.updateInputList();
 
@@ -386,7 +386,7 @@ define(['HubLink', 'RIB', 'PropertiesPanel', 'Easy'], function(Hub, RIB, Ppanel,
     this._inputs = [];
     for(var rec of this.gestures.recording){
       this._inputs.push(rec.name);
-    };
+    }
   };
 
   /**
@@ -394,7 +394,7 @@ define(['HubLink', 'RIB', 'PropertiesPanel', 'Easy'], function(Hub, RIB, Ppanel,
    */
   GestureController.onNewData = function(data) {
     // Because data inputs arrive one by one, we need to wait for them all.
-    for(output in data){
+    for(var output in data){
       if(this._lastData.hasOwnProperty(output)){
         this._lastData[output] = data[output];
       }
