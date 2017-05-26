@@ -1,0 +1,60 @@
+<!-- Gesture Controller block Properties Controls-->
+<template id="block-custom-properties">
+  <p></p><p></p>
+  <div class="ui form">
+    {{#each recording}}
+    <div class="inline fields">
+
+      <div class="ten wide field">
+        <div class="ui inverted transparent icon input">
+          <input id="txtName" type="text" data-index={{index}} placeholder="Name" value="{{name}}">
+          <i class="search icon"></i>
+        </div>
+      </div>
+
+      <div class="two wide field">
+        <button id="btRecord" data-index={{index}} class="circular ui mini black icon button">
+          <i class="red icon record"></i>
+        </button>
+      </div>
+
+      <div class="two wide field">
+        <button id="btDelete" data-index={{index}} class="circular ui mini black icon button">
+          <i class="icon trash"></i>
+        </button>
+      </div>
+
+      <!-- <div class="two wide field">
+        <button id="btSave" data-index={{index}} class="circular ui mini black disabled icon button">
+          <i class="blue icon save"></i>
+        </button>
+      </div> -->
+
+      <div class="two wide field">
+        <button id="btHear" data-index={{index}} class="circular ui mini black disabled icon button">
+          <i class="green icon play"></i>
+        </button>
+      </div>
+
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="ui inverted divider"></div>
+
+  <div id="msgContainer" class="ui black inverted center aligned segment">
+    <h2 class="ui inverted header">
+      <p id="msgHeader"></p>
+      <div id="msgText" class="sub header"></div>
+    </h2>
+  </div>
+
+  <div class="inline mini field">
+    <button id="btAdd" class="circular ui icon button">
+      <i class="icon plus"></i>
+    </button>
+  </div>
+
+</div>
+
+</template>

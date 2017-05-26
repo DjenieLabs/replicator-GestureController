@@ -1,0 +1,12 @@
+{
+  "name": "replicator-GestureController",
+  "version": "0.1.0",
+  "description": "Record and recognise gestures using neural networks and an IMU block.",
+  "homepage": "",
+  "authors": [
+    "Alexander Agudelo"
+  ],
+  "main": "main.js",
+  "keywords": [],
+  "license": "MIT"
+}
